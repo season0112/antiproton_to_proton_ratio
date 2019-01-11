@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/homea/vsk10/vsk1056/Software/ACsoft/utilities/VersionRegistry.hh
+algorithm
+-
+map
+-
+string
+-
+
+/homea/vsk10/vsk1056/Software/myanalysisversion6.2_ecalbdt/build/ProjectVersion.C
+VersionRegistry.hh
+-
+

@@ -1,0 +1,4 @@
+add_subdirectory(ExampleAnalysisTreeReader)
+add_subdirectory(ExampleAnalysisTreeWriter)
+add_subdirectory(Templatefitter)
+add_subdirectory(1Dtemplate)
