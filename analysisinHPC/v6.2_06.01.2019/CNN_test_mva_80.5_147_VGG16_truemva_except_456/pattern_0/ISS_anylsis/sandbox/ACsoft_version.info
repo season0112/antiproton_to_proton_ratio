@@ -1,0 +1,121 @@
+Repository /home/bo791269/Software/ACsoft
+SHA1: 33f76be95c5a0c7f256c22e178134a0c04cfbc52, version: ACsoft_7.6.3.0-0-g33f76be-dirty, on branch HEAD
+
+
+output from git diff:
+diff --git a/utilities/TemplateFitter2D.C b/utilities/TemplateFitter2D.C
+index 66c0d20..73f09f6 100644
+--- a/utilities/TemplateFitter2D.C
++++ b/utilities/TemplateFitter2D.C
+@@ -47,22 +47,28 @@ TCanvas* TemplateFitter2D::CreateResultDrawing(std::string canvasname, int width
+ 
+   graphicsOutput->cd(1); //data
+   gPad->SetLogz();
+-  gPad->SetGrid();
++//  gPad->SetGrid();
+ 
+   TH1* dataCopy = fInputData->DrawCopy("COLZ");
+   dataCopy->SetStats(0); // disable statistic boxes in template canvas
++  dataCopy->GetXaxis()->SetTitle("#bf{Charge Confusion Estimator}");
++  dataCopy->GetYaxis()->SetTitle("#bf{TrdLikelihood}");
+ 
+   graphicsOutput->cd(2); //fit result
+   gPad->SetLogz();
+-  gPad->SetGrid();
++//  gPad->SetGrid();
+   fFitResult->SetStats(0);
+   TH1* fitResultCopy = fFitResult->DrawCopy("COLZ");
++  fitResultCopy->GetXaxis()->SetTitle("#bf{Charge Confusion Estimator}");
++  fitResultCopy->GetYaxis()->SetTitle("#bf{TrdLikelihood}");
+ 
+   graphicsOutput->cd(3); //fit-data difference
+   gPad->SetLogz();
+-  gPad->SetGrid();
++//  gPad->SetGrid();
+   TH2F* differenceCopy = (TH2F*) fInputData->Clone("difference_hist");
+   differenceCopy->SetTitle("(data-fit)**2/sigma_data**2");
++  differenceCopy->GetXaxis()->SetTitle("#bf{Charge Confusion Estimator}");
++  differenceCopy->GetYaxis()->SetTitle("#bf{TrdLikelihood}");
+   //---> This assumes the template has no error!!
+   for (int k = 1; k <= differenceCopy->GetXaxis()->GetNbins(); k++)
+     for (int l = 1; l <= differenceCopy->GetYaxis()->GetNbins(); l++) {
+@@ -181,11 +187,13 @@ TCanvas* TemplateFitter2D::CreateResultDrawingXprojection(std::string canvasname
+   TCanvas* graphicsOutput = new TCanvas(canvasname.c_str(), canvasname.c_str(), width, height);
+   graphicsOutput->cd();
+   gPad->SetLogy();
+-  gPad->SetGrid();
++//  gPad->SetGrid();
+ 
+-  TLegend* legend = new TLegend(0.6034913, 0.7009346, 0.8944306, 0.8913551, NULL, "brNDC");
++//  TLegend* legend = new TLegend(0.6034913, 0.7009346, 0.8944306, 0.8913551, NULL, "brNDC");
++  TLegend* legend = new TLegend(0.35453035, 0.7009346, 0.64546965, 0.8913551, NULL, "brNDC");
+   legend->SetFillColor(kWhite);
+   legend->SetLineColor(kWhite);
++  legend->SetTextFont(62); 
+ 
+   TH1* dataCopy;
+   if (allrange)
+@@ -199,6 +207,7 @@ TCanvas* TemplateFitter2D::CreateResultDrawingXprojection(std::string canvasname
+   dataCopy->SetLineColor(dataColor);
+   dataCopy->SetMarkerColor(dataColor);
+   dataCopy->SetMarkerStyle(dataMarker);
++  dataCopy->GetXaxis()->SetTitle("#bf{Charge Confusion Estimator}");
+   if (allrange)
+     legend->AddEntry(dataCopy, Form("Data distribution (X projection) (%.0f entries)", fInputData->GetEntries()));
+   else
+@@ -216,9 +225,9 @@ TCanvas* TemplateFitter2D::CreateResultDrawingXprojection(std::string canvasname
+   fitResultCopy->SetLineColor(fitColor);
+   fitResultCopy->SetLineStyle(fitStyle);
+   if (allrange)
+-    legend->AddEntry(dataCopy, Form("Template fit result (X projection) (#chi^{2}/ndf=%5.2f/%d=%5.2f)", Chi2(), NDF(), Chi2() / NDF()));
++    legend->AddEntry(fitResultCopy, Form("Template fit result (X projection) (#chi^{2}/ndf=%5.2f/%d=%5.2f)", Chi2(), NDF(), Chi2() / NDF()));
+   else
+-    legend->AddEntry(dataCopy, Form("Template fit result (X projection, %.2f < Y < %.2f) (#chi^{2}/ndf=%5.2f/%d=%5.2f)", Ylow, Yhigh, Chi2(), NDF(), Chi2() / NDF()));
++    legend->AddEntry(fitResultCopy, Form("Template fit result (X projection, %.2f < Y < %.2f) (#chi^{2}/ndf=%5.2f/%d=%5.2f)", Ylow, Yhigh, Chi2(), NDF(), Chi2() / NDF()));
+ 
+   for (unsigned int i = 0; i < fResultHistos.size(); ++i) {
+     TH1* resultCopy;
+@@ -273,11 +282,12 @@ TCanvas* TemplateFitter2D::CreateResultDrawingYprojection(std::string canvasname
+   TCanvas* graphicsOutput = new TCanvas(canvasname.c_str(), canvasname.c_str(), width, height);
+   graphicsOutput->cd();
+   gPad->SetLogy();
+-  gPad->SetGrid();
++//  gPad->SetGrid();
+ 
+   TLegend* legend = new TLegend(0.6034913, 0.7009346, 0.8944306, 0.8913551, NULL, "brNDC");
+   legend->SetFillColor(kWhite);
+   legend->SetLineColor(kWhite);
++  legend->SetTextFont(62);
+ 
+   TH1* dataCopy;
+   if (allrange)
+@@ -291,6 +301,7 @@ TCanvas* TemplateFitter2D::CreateResultDrawingYprojection(std::string canvasname
+   dataCopy->SetLineColor(dataColor);
+   dataCopy->SetMarkerColor(dataColor);
+   dataCopy->SetMarkerStyle(dataMarker);
++  dataCopy->GetXaxis()->SetTitle("#bf{TrdLikelihood}");
+   if (allrange)
+     legend->AddEntry(dataCopy, Form("Data distribution (Y projection) (%.0f entries)", fInputData->GetEntries()));
+   else
+@@ -308,9 +319,9 @@ TCanvas* TemplateFitter2D::CreateResultDrawingYprojection(std::string canvasname
+   fitResultCopy->SetLineColor(fitColor);
+   fitResultCopy->SetLineStyle(fitStyle);
+   if (allrange)
+-    legend->AddEntry(dataCopy, Form("Template fit result (Y projection) (#chi^{2}/ndf=%5.2f/%d=%5.2f)", Chi2(), NDF(), Chi2() / NDF()));
++    legend->AddEntry(fitResultCopy, Form("Template fit result (Y projection) (#chi^{2}/ndf=%5.2f/%d=%5.2f)", Chi2(), NDF(), Chi2() / NDF()));
+   else
+-    legend->AddEntry(dataCopy, Form("Template fit result (Y projection, %.2f < X < %.2f) (#chi^{2}/ndf=%5.2f/%d=%5.2f)", Xlow, Xhigh, Chi2(), NDF(), Chi2() / NDF()));
++    legend->AddEntry(fitResultCopy, Form("Template fit result (Y projection, %.2f < X < %.2f) (#chi^{2}/ndf=%5.2f/%d=%5.2f)", Xlow, Xhigh, Chi2(), NDF(), Chi2() / NDF()));
+ 
+ 
+   for (unsigned int i = 0; i < fResultHistos.size(); ++i) {
+
+output from git status:
+# HEAD detached at ACsoft_7.6.3.0
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   utilities/TemplateFitter2D.C
+#
+no changes added to commit (use "git add" and/or "git commit -a")

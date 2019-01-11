@@ -1,0 +1,83 @@
+Sender: LSF System <lsfadmin@lng06>
+Subject: Job 46218951: <toymodel_analysis6.py> in cluster <rcc> Exited
+
+Job <toymodel_analysis6.py> was submitted from host <login-g> by user <bo791269> in cluster <rcc> at Tue Dec 18 01:11:38 2018
+Job was executed on host(s) <lng06>, in queue <jara-clx>, as user <bo791269> in cluster <rcc> at Tue Dec 18 17:10:01 2018
+</home/bo791269> was used as the home directory.
+</home/bo791269/neuralnetwork_v6.2/v6.2_17.12.2018/CNN_test_mva_16.6_80.5_VGG16_truemva_except_456/pattern_0> was used as the working directory.
+Started at Tue Dec 18 17:10:01 2018
+Terminated at Tue Dec 18 17:10:23 2018
+Results reported at Tue Dec 18 17:10:23 2018
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#! /usr/bin/env zsh
+#BSUB -J toymodel_analysis6.py
+#BSUB -o /rwthfs/rz/cluster/home/bo791269/neuralnetwork_v6.2/v6.2_17.12.2018/CNN_test_mva_16.6_80.5_VGG16_truemva_except_456/pattern_0/output/output_00000.txt
+#BSUB -W 6:00
+#BSUB -M 51200
+#BSUB -C 0
+#BSUB -P "jara0052"
+#BSUB -R "pascal"
+#BSUB -gpu "num=2"
+#BSUB -m c24m128
+#BSUB -R "select[hpcwork_fast]"
+#BSUB -R "select[cvmfs]"
+
+source /rwthfs/rz/cluster/home/bo791269/neuralnetwork_v6.2/v6.2_17.12.2018/CNN_test_mva_16.6_80.5_VGG16_truemva_except_456/pattern_0/sandbox/environment.sh
+
+toymodel_analysis6.py 
+RET=${?}
+echo
+echo job 00000 exited with return code ${RET}
+
+exit ${RET}
+
+------------------------------------------------------------
+
+Exited with exit code 1.
+
+Resource usage summary:
+
+    CPU time :                                   9.18 sec.
+    Max Memory :                                 409 MB
+    Average Memory :                             6.00 MB
+    Total Requested Memory :                     51200.00 MB
+    Delta Memory :                               50791.00 MB
+    Max Swap :                                   -
+    Max Processes :                              6
+    Max Threads :                                6
+    Run time :                                   22 sec.
+    Turnaround time :                            57525 sec.
+
+The output (if any) follows:
+
+/home/bo791269/Software/virtualenv2.7.12/lib/python2.7/site-packages/subprocess32.py:472: RuntimeWarning: The _posixsubprocess module is not being used. Child process reliability may suffer if your program uses threads.
+  "program uses threads.", RuntimeWarning)
+/home/bo791269/Software/virtualenv2.7.12/lib/python2.7/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+Using TensorFlow backend.
+Traceback (most recent call last):
+  File "/home/bo791269/Software/myanalysisversion6.2.2_adding_templatefit2d/Scripts/toymodel_analysis6.py", line 18, in <module>
+    from keras.layers import Activation, Dropout, Flatten, Dense  
+  File "/home/bo791269/Software/virtualenv2.7.12/lib/python2.7/site-packages/keras/__init__.py", line 3, in <module>
+    from . import utils
+  File "/home/bo791269/Software/virtualenv2.7.12/lib/python2.7/site-packages/keras/utils/__init__.py", line 6, in <module>
+    from . import conv_utils
+  File "/home/bo791269/Software/virtualenv2.7.12/lib/python2.7/site-packages/keras/utils/conv_utils.py", line 9, in <module>
+    from .. import backend as K
+  File "/home/bo791269/Software/virtualenv2.7.12/lib/python2.7/site-packages/keras/backend/__init__.py", line 84, in <module>
+    from .tensorflow_backend import *
+  File "/home/bo791269/Software/virtualenv2.7.12/lib/python2.7/site-packages/keras/backend/tensorflow_backend.py", line 5, in <module>
+    import tensorflow as tf
+  File "/home/bo791269/Software/virtualenv2.7.12/lib/python2.7/site-packages/tensorflow/__init__.py", line 24, in <module>
+    from tensorflow.python import *
+  File "/home/bo791269/Software/virtualenv2.7.12/lib/python2.7/site-packages/tensorflow/python/__init__.py", line 52, in <module>
+    from tensorflow.core.framework.graph_pb2 import *
+  File "/home/bo791269/Software/virtualenv2.7.12/lib/python2.7/site-packages/tensorflow/core/framework/graph_pb2.py", line 6, in <module>
+    from google.protobuf import descriptor as _descriptor
+ImportError: No module named google.protobuf
+
+job 00000 exited with return code 1

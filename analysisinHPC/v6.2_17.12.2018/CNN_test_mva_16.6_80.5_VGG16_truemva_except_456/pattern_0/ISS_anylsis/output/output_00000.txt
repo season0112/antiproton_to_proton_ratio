@@ -1,0 +1,390 @@
+Sender: LSF System <lsfadmin@lng02>
+Subject: Job 46249465: <loadmodel_ISS2.py> in cluster <rcc> Done
+
+Job <loadmodel_ISS2.py> was submitted from host <login-g> by user <bo791269> in cluster <rcc> at Fri Dec 21 11:58:45 2018
+Job was executed on host(s) <lng02>, in queue <jara-clx>, as user <bo791269> in cluster <rcc> at Fri Dec 21 17:59:03 2018
+</home/bo791269> was used as the home directory.
+</hpcwork/bo791269/neuralnetwork_v6.2/v6.2_17.12.2018/CNN_test_mva_16.6_80.5_VGG16_truemva_except_456/pattern_0/ISS_anylsis> was used as the working directory.
+Started at Fri Dec 21 17:59:03 2018
+Terminated at Fri Dec 21 18:17:31 2018
+Results reported at Fri Dec 21 18:17:31 2018
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#! /usr/bin/env zsh
+#BSUB -J loadmodel_ISS2.py
+#BSUB -o /lustren/hpcwork/bo791269/neuralnetwork_v6.2/v6.2_17.12.2018/CNN_test_mva_16.6_80.5_VGG16_truemva_except_456/pattern_0/ISS_anylsis/output/output_00000.txt
+#BSUB -W 6:00
+#BSUB -M 61440
+#BSUB -C 0
+#BSUB -P "jara0052"
+#BSUB -R "pascal"
+#BSUB -gpu "num=2"
+#BSUB -m c24m128
+#BSUB -R "select[hpcwork_fast]"
+#BSUB -R "select[cvmfs]"
+
+source /lustren/hpcwork/bo791269/neuralnetwork_v6.2/v6.2_17.12.2018/CNN_test_mva_16.6_80.5_VGG16_truemva_except_456/pattern_0/ISS_anylsis/sandbox/environment.sh
+
+loadmodel_ISS2.py 
+RET=${?}
+echo
+echo job 00000 exited with return code ${RET}
+
+exit ${RET}
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   1007.32 sec.
+    Max Memory :                                 4733 MB
+    Average Memory :                             4377.24 MB
+    Total Requested Memory :                     61440.00 MB
+    Delta Memory :                               56707.00 MB
+    Max Swap :                                   -
+    Max Processes :                              5
+    Max Threads :                                64
+    Run time :                                   1108 sec.
+    Turnaround time :                            22726 sec.
+
+The output (if any) follows:
+
+/home/bo791269/Software/virtualenv2.7.12/lib/python2.7/site-packages/subprocess32.py:472: RuntimeWarning: The _posixsubprocess module is not being used. Child process reliability may suffer if your program uses threads.
+  "program uses threads.", RuntimeWarning)
+/home/bo791269/Software/virtualenv2.7.12/lib/python2.7/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+Using TensorFlow backend.
+2018-12-21 18:00:27.786880: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2018-12-21 18:00:28.060428: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Found device 0 with properties: 
+name: Tesla P100-SXM2-16GB major: 6 minor: 0 memoryClockRate(GHz): 1.4805
+pciBusID: 0000:06:00.0
+totalMemory: 15.90GiB freeMemory: 15.61GiB
+2018-12-21 18:00:28.268030: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Found device 1 with properties: 
+name: Tesla P100-SXM2-16GB major: 6 minor: 0 memoryClockRate(GHz): 1.4805
+pciBusID: 0000:84:00.0
+totalMemory: 15.90GiB freeMemory: 15.61GiB
+2018-12-21 18:00:28.268077: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1045] Device peer to peer matrix
+2018-12-21 18:00:28.268092: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1051] DMA: 0 1 
+2018-12-21 18:00:28.268097: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1061] 0:   Y Y 
+2018-12-21 18:00:28.268101: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1061] 1:   Y Y 
+2018-12-21 18:00:28.268116: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0, compute capability: 6.0)
+2018-12-21 18:00:28.268122: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Creating TensorFlow device (/device:GPU:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0, compute capability: 6.0)
+
+job 00000 exited with return code 0
+Sender: LSF System <lsfadmin@lng05>
+Subject: Job 46249467: <loadmodel_ISS3.py> in cluster <rcc> Done
+
+Job <loadmodel_ISS3.py> was submitted from host <login-g> by user <bo791269> in cluster <rcc> at Fri Dec 21 11:58:49 2018
+Job was executed on host(s) <lng05>, in queue <jara-clx>, as user <bo791269> in cluster <rcc> at Fri Dec 21 18:16:13 2018
+</home/bo791269> was used as the home directory.
+</hpcwork/bo791269/neuralnetwork_v6.2/v6.2_17.12.2018/CNN_test_mva_16.6_80.5_VGG16_truemva_except_456/pattern_0/ISS_anylsis> was used as the working directory.
+Started at Fri Dec 21 18:16:13 2018
+Terminated at Fri Dec 21 18:37:22 2018
+Results reported at Fri Dec 21 18:37:22 2018
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#! /usr/bin/env zsh
+#BSUB -J loadmodel_ISS3.py
+#BSUB -o /lustren/hpcwork/bo791269/neuralnetwork_v6.2/v6.2_17.12.2018/CNN_test_mva_16.6_80.5_VGG16_truemva_except_456/pattern_0/ISS_anylsis/output/output_00000.txt
+#BSUB -W 6:00
+#BSUB -M 61440
+#BSUB -C 0
+#BSUB -P "jara0052"
+#BSUB -R "pascal"
+#BSUB -gpu "num=2"
+#BSUB -m c24m128
+#BSUB -R "select[hpcwork_fast]"
+#BSUB -R "select[cvmfs]"
+
+source /lustren/hpcwork/bo791269/neuralnetwork_v6.2/v6.2_17.12.2018/CNN_test_mva_16.6_80.5_VGG16_truemva_except_456/pattern_0/ISS_anylsis/sandbox/environment.sh
+
+loadmodel_ISS3.py 
+RET=${?}
+echo
+echo job 00000 exited with return code ${RET}
+
+exit ${RET}
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   1134.52 sec.
+    Max Memory :                                 4657 MB
+    Average Memory :                             4249.02 MB
+    Total Requested Memory :                     61440.00 MB
+    Delta Memory :                               56783.00 MB
+    Max Swap :                                   -
+    Max Processes :                              7
+    Max Threads :                                64
+    Run time :                                   1269 sec.
+    Turnaround time :                            23913 sec.
+
+The output (if any) follows:
+
+/home/bo791269/Software/virtualenv2.7.12/lib/python2.7/site-packages/subprocess32.py:472: RuntimeWarning: The _posixsubprocess module is not being used. Child process reliability may suffer if your program uses threads.
+  "program uses threads.", RuntimeWarning)
+/home/bo791269/Software/virtualenv2.7.12/lib/python2.7/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+Using TensorFlow backend.
+2018-12-21 18:18:07.539660: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2018-12-21 18:18:07.813490: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Found device 0 with properties: 
+name: Tesla P100-SXM2-16GB major: 6 minor: 0 memoryClockRate(GHz): 1.4805
+pciBusID: 0000:06:00.0
+totalMemory: 15.90GiB freeMemory: 15.61GiB
+2018-12-21 18:18:08.016596: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Found device 1 with properties: 
+name: Tesla P100-SXM2-16GB major: 6 minor: 0 memoryClockRate(GHz): 1.4805
+pciBusID: 0000:84:00.0
+totalMemory: 15.90GiB freeMemory: 15.61GiB
+2018-12-21 18:18:08.016642: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1045] Device peer to peer matrix
+2018-12-21 18:18:08.016657: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1051] DMA: 0 1 
+2018-12-21 18:18:08.016662: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1061] 0:   Y Y 
+2018-12-21 18:18:08.016665: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1061] 1:   Y Y 
+2018-12-21 18:18:08.016681: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0, compute capability: 6.0)
+2018-12-21 18:18:08.016686: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Creating TensorFlow device (/device:GPU:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0, compute capability: 6.0)
+
+job 00000 exited with return code 0
+Sender: LSF System <lsfadmin@lng02>
+Subject: Job 46249468: <loadmodel_ISS4.py> in cluster <rcc> Done
+
+Job <loadmodel_ISS4.py> was submitted from host <login-g> by user <bo791269> in cluster <rcc> at Fri Dec 21 11:58:53 2018
+Job was executed on host(s) <lng02>, in queue <jara-clx>, as user <bo791269> in cluster <rcc> at Fri Dec 21 18:18:07 2018
+</home/bo791269> was used as the home directory.
+</hpcwork/bo791269/neuralnetwork_v6.2/v6.2_17.12.2018/CNN_test_mva_16.6_80.5_VGG16_truemva_except_456/pattern_0/ISS_anylsis> was used as the working directory.
+Started at Fri Dec 21 18:18:07 2018
+Terminated at Fri Dec 21 18:42:14 2018
+Results reported at Fri Dec 21 18:42:14 2018
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#! /usr/bin/env zsh
+#BSUB -J loadmodel_ISS4.py
+#BSUB -o /lustren/hpcwork/bo791269/neuralnetwork_v6.2/v6.2_17.12.2018/CNN_test_mva_16.6_80.5_VGG16_truemva_except_456/pattern_0/ISS_anylsis/output/output_00000.txt
+#BSUB -W 6:00
+#BSUB -M 61440
+#BSUB -C 0
+#BSUB -P "jara0052"
+#BSUB -R "pascal"
+#BSUB -gpu "num=2"
+#BSUB -m c24m128
+#BSUB -R "select[hpcwork_fast]"
+#BSUB -R "select[cvmfs]"
+
+source /lustren/hpcwork/bo791269/neuralnetwork_v6.2/v6.2_17.12.2018/CNN_test_mva_16.6_80.5_VGG16_truemva_except_456/pattern_0/ISS_anylsis/sandbox/environment.sh
+
+loadmodel_ISS4.py 
+RET=${?}
+echo
+echo job 00000 exited with return code ${RET}
+
+exit ${RET}
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   1327.13 sec.
+    Max Memory :                                 4956 MB
+    Average Memory :                             4663.40 MB
+    Total Requested Memory :                     61440.00 MB
+    Delta Memory :                               56484.00 MB
+    Max Swap :                                   -
+    Max Processes :                              5
+    Max Threads :                                64
+    Run time :                                   1447 sec.
+    Turnaround time :                            24201 sec.
+
+The output (if any) follows:
+
+/home/bo791269/Software/virtualenv2.7.12/lib/python2.7/site-packages/subprocess32.py:472: RuntimeWarning: The _posixsubprocess module is not being used. Child process reliability may suffer if your program uses threads.
+  "program uses threads.", RuntimeWarning)
+/home/bo791269/Software/virtualenv2.7.12/lib/python2.7/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+Using TensorFlow backend.
+2018-12-21 18:19:34.543303: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2018-12-21 18:19:34.815151: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Found device 0 with properties: 
+name: Tesla P100-SXM2-16GB major: 6 minor: 0 memoryClockRate(GHz): 1.4805
+pciBusID: 0000:06:00.0
+totalMemory: 15.90GiB freeMemory: 15.61GiB
+2018-12-21 18:19:35.021315: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Found device 1 with properties: 
+name: Tesla P100-SXM2-16GB major: 6 minor: 0 memoryClockRate(GHz): 1.4805
+pciBusID: 0000:84:00.0
+totalMemory: 15.90GiB freeMemory: 15.61GiB
+2018-12-21 18:19:35.021358: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1045] Device peer to peer matrix
+2018-12-21 18:19:35.021371: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1051] DMA: 0 1 
+2018-12-21 18:19:35.021376: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1061] 0:   Y Y 
+2018-12-21 18:19:35.021379: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1061] 1:   Y Y 
+2018-12-21 18:19:35.021393: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0, compute capability: 6.0)
+2018-12-21 18:19:35.021398: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Creating TensorFlow device (/device:GPU:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0, compute capability: 6.0)
+
+job 00000 exited with return code 0
+Sender: LSF System <lsfadmin@lng07>
+Subject: Job 46249469: <loadmodel_ISS5.py> in cluster <rcc> Done
+
+Job <loadmodel_ISS5.py> was submitted from host <login-g> by user <bo791269> in cluster <rcc> at Fri Dec 21 11:58:57 2018
+Job was executed on host(s) <lng07>, in queue <jara-clx>, as user <bo791269> in cluster <rcc> at Fri Dec 21 18:28:32 2018
+</home/bo791269> was used as the home directory.
+</hpcwork/bo791269/neuralnetwork_v6.2/v6.2_17.12.2018/CNN_test_mva_16.6_80.5_VGG16_truemva_except_456/pattern_0/ISS_anylsis> was used as the working directory.
+Started at Fri Dec 21 18:28:32 2018
+Terminated at Fri Dec 21 18:55:59 2018
+Results reported at Fri Dec 21 18:55:59 2018
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#! /usr/bin/env zsh
+#BSUB -J loadmodel_ISS5.py
+#BSUB -o /lustren/hpcwork/bo791269/neuralnetwork_v6.2/v6.2_17.12.2018/CNN_test_mva_16.6_80.5_VGG16_truemva_except_456/pattern_0/ISS_anylsis/output/output_00000.txt
+#BSUB -W 6:00
+#BSUB -M 61440
+#BSUB -C 0
+#BSUB -P "jara0052"
+#BSUB -R "pascal"
+#BSUB -gpu "num=2"
+#BSUB -m c24m128
+#BSUB -R "select[hpcwork_fast]"
+#BSUB -R "select[cvmfs]"
+
+source /lustren/hpcwork/bo791269/neuralnetwork_v6.2/v6.2_17.12.2018/CNN_test_mva_16.6_80.5_VGG16_truemva_except_456/pattern_0/ISS_anylsis/sandbox/environment.sh
+
+loadmodel_ISS5.py 
+RET=${?}
+echo
+echo job 00000 exited with return code ${RET}
+
+exit ${RET}
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   1511.14 sec.
+    Max Memory :                                 5438 MB
+    Average Memory :                             5092.53 MB
+    Total Requested Memory :                     61440.00 MB
+    Delta Memory :                               56002.00 MB
+    Max Swap :                                   -
+    Max Processes :                              6
+    Max Threads :                                64
+    Run time :                                   1647 sec.
+    Turnaround time :                            25022 sec.
+
+The output (if any) follows:
+
+/home/bo791269/Software/virtualenv2.7.12/lib/python2.7/site-packages/subprocess32.py:472: RuntimeWarning: The _posixsubprocess module is not being used. Child process reliability may suffer if your program uses threads.
+  "program uses threads.", RuntimeWarning)
+/home/bo791269/Software/virtualenv2.7.12/lib/python2.7/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+Using TensorFlow backend.
+2018-12-21 18:30:17.255310: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2018-12-21 18:30:17.546558: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Found device 0 with properties: 
+name: Tesla P100-SXM2-16GB major: 6 minor: 0 memoryClockRate(GHz): 1.4805
+pciBusID: 0000:06:00.0
+totalMemory: 15.90GiB freeMemory: 15.61GiB
+2018-12-21 18:30:17.752272: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Found device 1 with properties: 
+name: Tesla P100-SXM2-16GB major: 6 minor: 0 memoryClockRate(GHz): 1.4805
+pciBusID: 0000:84:00.0
+totalMemory: 15.90GiB freeMemory: 15.61GiB
+2018-12-21 18:30:17.752314: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1045] Device peer to peer matrix
+2018-12-21 18:30:17.760023: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1051] DMA: 0 1 
+2018-12-21 18:30:17.760035: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1061] 0:   Y Y 
+2018-12-21 18:30:17.760039: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1061] 1:   Y Y 
+2018-12-21 18:30:17.760053: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0, compute capability: 6.0)
+2018-12-21 18:30:17.760059: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Creating TensorFlow device (/device:GPU:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0, compute capability: 6.0)
+
+job 00000 exited with return code 0
+Sender: LSF System <lsfadmin@lng06>
+Subject: Job 46249470: <loadmodel_ISS6.py> in cluster <rcc> Done
+
+Job <loadmodel_ISS6.py> was submitted from host <login-g> by user <bo791269> in cluster <rcc> at Fri Dec 21 11:59:00 2018
+Job was executed on host(s) <lng06>, in queue <jara-clx>, as user <bo791269> in cluster <rcc> at Fri Dec 21 18:31:02 2018
+</home/bo791269> was used as the home directory.
+</hpcwork/bo791269/neuralnetwork_v6.2/v6.2_17.12.2018/CNN_test_mva_16.6_80.5_VGG16_truemva_except_456/pattern_0/ISS_anylsis> was used as the working directory.
+Started at Fri Dec 21 18:31:02 2018
+Terminated at Fri Dec 21 19:03:03 2018
+Results reported at Fri Dec 21 19:03:03 2018
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#! /usr/bin/env zsh
+#BSUB -J loadmodel_ISS6.py
+#BSUB -o /lustren/hpcwork/bo791269/neuralnetwork_v6.2/v6.2_17.12.2018/CNN_test_mva_16.6_80.5_VGG16_truemva_except_456/pattern_0/ISS_anylsis/output/output_00000.txt
+#BSUB -W 6:00
+#BSUB -M 61440
+#BSUB -C 0
+#BSUB -P "jara0052"
+#BSUB -R "pascal"
+#BSUB -gpu "num=2"
+#BSUB -m c24m128
+#BSUB -R "select[hpcwork_fast]"
+#BSUB -R "select[cvmfs]"
+
+source /lustren/hpcwork/bo791269/neuralnetwork_v6.2/v6.2_17.12.2018/CNN_test_mva_16.6_80.5_VGG16_truemva_except_456/pattern_0/ISS_anylsis/sandbox/environment.sh
+
+loadmodel_ISS6.py 
+RET=${?}
+echo
+echo job 00000 exited with return code ${RET}
+
+exit ${RET}
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   1763.24 sec.
+    Max Memory :                                 5595 MB
+    Average Memory :                             5269.64 MB
+    Total Requested Memory :                     61440.00 MB
+    Delta Memory :                               55845.00 MB
+    Max Swap :                                   -
+    Max Processes :                              5
+    Max Threads :                                64
+    Run time :                                   1921 sec.
+    Turnaround time :                            25443 sec.
+
+The output (if any) follows:
+
+/home/bo791269/Software/virtualenv2.7.12/lib/python2.7/site-packages/subprocess32.py:472: RuntimeWarning: The _posixsubprocess module is not being used. Child process reliability may suffer if your program uses threads.
+  "program uses threads.", RuntimeWarning)
+/home/bo791269/Software/virtualenv2.7.12/lib/python2.7/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+Using TensorFlow backend.
+2018-12-21 18:32:55.709944: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2018-12-21 18:32:55.974620: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Found device 0 with properties: 
+name: Tesla P100-SXM2-16GB major: 6 minor: 0 memoryClockRate(GHz): 1.4805
+pciBusID: 0000:06:00.0
+totalMemory: 15.90GiB freeMemory: 15.61GiB
+2018-12-21 18:32:56.182286: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Found device 1 with properties: 
+name: Tesla P100-SXM2-16GB major: 6 minor: 0 memoryClockRate(GHz): 1.4805
+pciBusID: 0000:84:00.0
+totalMemory: 15.90GiB freeMemory: 15.61GiB
+2018-12-21 18:32:56.182328: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1045] Device peer to peer matrix
+2018-12-21 18:32:56.182341: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1051] DMA: 0 1 
+2018-12-21 18:32:56.182346: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1061] 0:   Y Y 
+2018-12-21 18:32:56.182349: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1061] 1:   Y Y 
+2018-12-21 18:32:56.182363: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: Tesla P100-SXM2-16GB, pci bus id: 0000:06:00.0, compute capability: 6.0)
+2018-12-21 18:32:56.182368: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Creating TensorFlow device (/device:GPU:1) -> (device: 1, name: Tesla P100-SXM2-16GB, pci bus id: 0000:84:00.0, compute capability: 6.0)
+
+job 00000 exited with return code 0

@@ -1,0 +1,74 @@
+Repository /home/bo791269/Software/myanalysisversion6.2.2_adding_templatefit2d
+SHA1: 97e4883e406c7556360f8bd4722cedba93283b2d, version: 97e4883-dirty, on branch master
+
+
+output from git diff:
+diff --git a/Programs/Templatefitter/main.C b/Programs/Templatefitter/main.C
+index 53755ea..484a68b 100644
+--- a/Programs/Templatefitter/main.C
++++ b/Programs/Templatefitter/main.C
+@@ -30,12 +30,10 @@ using namespace std;
+ 
+ int main(int argc, char** argv) {
+ /*
+-   int   i;   
+-   for (i = 0; i<argc; i++)   
+-       std::cout<<argv[i]<<std::endl;   
+-       std::cin>>i; 
++float binnings[5] = {80.5, 93.0, 108.0, 125.0, 147.0};
++char root2 = "root";
++for (int binleft=0; binleft<4; binleft++ ) {
+ */
+-
+ TFile *f = new TFile("histo.root");
+ TH2D *template_correct = (TH2D*)f->Get("template_correct");
+ TH2D *template_confused = (TH2D*)f->Get("template_confused");
+@@ -48,10 +46,10 @@ templateFitter.AddTemplateHistogram(template_confused);
+ templateFitter.AddTemplateHistogram(template_electron);
+ templateFitter.SetDataHistogram(data);
+ 
+-templateFitter.SetStartValue(0, 322);
+-templateFitter.SetStartValue(1, 2500);
+-templateFitter.SetStartValue(2, 1500);
+-templateFitter.Fit(0);
++templateFitter.SetStartValue(0, 243);
++templateFitter.SetStartValue(1, 2700);
++templateFitter.SetStartValue(2, 1300);
++templateFitter.Fit(1);
+ 
+  // store those
+ vector<double> result, ResultError;
+@@ -67,20 +65,12 @@ cout << ResultError << endl;
+ cout << Chi2 << endl;
+ cout << NDF << endl;
+ 
+-
+-
+ TCanvas * c1 = templateFitter.CreateResultDrawing("Fit_Result",800,600);
+-c1->SaveAs("Fit_Result.png");
++c1->SaveAs("Fit_Result.pdf");
+ TCanvas * c2 = templateFitter.CreateResultDrawingXprojection("CCprojection",800,600);
+-c2->SaveAs("CCprojection.png");
++c2->SaveAs("CCprojection.pdf");
+ TCanvas * c3 = templateFitter.CreateResultDrawingYprojection("TRDprojection",800,600);
+-c3->SaveAs("TRDprojection.png");
+-
+-
+-
+-
+-
+-
++c3->SaveAs("TRDprojection.pdf");
+ 
+ 
+ /*
+
+output from git status:
+# On branch master
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   Programs/Templatefitter/main.C
+#
+no changes added to commit (use "git add" and/or "git commit -a")

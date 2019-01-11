@@ -102,6 +102,7 @@ for i in range(data_formatted.shape[0]):
 
 ## 5. split ## 
 binnings = np.array([16.6, 18.0, 19.5, 21.1, 22.8, 24.7,26.7,28.8,31.1,33.5,36.1,38.9, 41.9, 45.1, 48.5, 52.2, 56.1, 60.3, 64.8, 69.7, 74.9, 80.5, 93.0, 108.0, 125.0, 147.0])
+#binnings = np.array([147, 175, 211, 250, 330, 525, 1000])
 for binleft in range(binnings.shape[0]-1):
         locals()['index_p_' + str(binnings[binleft]) + '_' + str(binnings[binleft+1])] = []
 	for i in range(data_formatted_positive.shape[0]):
